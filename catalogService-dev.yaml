@@ -11,18 +11,19 @@ server:
   port: 7007
 spring:
   application:
-    name: catalogService
+    name: catalog-service
   datasource:
-    url: jdbc:postgresql://localhost:5432/crm_catalog
-    username: postgres
-    password: 12345
+    url: jdbc:sqlserver://localhost:1433;encrypt=true;trustServerCertificate=true;databaseName=crm_catalog
+    username: sa
+    password: Mssql123.
+    platform: mssql
   jpa:
     hibernate:
       ddl-auto: update
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-      javax:
+        dialect: org.hibernate.dialect.SQLServerDialect
+      jakarta:
         persistence:
           validation:
             mode: none

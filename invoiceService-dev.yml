@@ -8,12 +8,12 @@ eureka:
     instance-id: ${spring.application.name}:${instanceId:${random.value}}
     preferIpAddress: true
 server:
-  port: 7003
+  port: 7010
 spring:
   application:
-    name: account-service
+    name: invoice-service
   datasource:
-    url: jdbc:postgresql://localhost:5432/crm_account
+    url: jdbc:postgresql://localhost:5432/crm_invoice
     username: postgres
     password: 12345
   jpa:
@@ -26,10 +26,6 @@ spring:
             mode: none
     show-sql: true
   kafka:
-    producer:
-      bootstrap-servers: localhost:9092
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
     consumer:
       auto-offset-reset: earliest
       bootstrap-servers: localhost:9092
